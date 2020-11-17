@@ -1,0 +1,509 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>CandyShop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
+    <style>
+      body {
+        margin: 0;
+      }
+
+      #menu {
+        margin:auto;
+        padding: 30px 25px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      #logoblock {
+        display: flex;
+        align-items: center;
+        margin: 0 0 15px;
+      }
+
+      .logoimg {
+        width: 50px;
+        height: 50px;
+      }
+
+      #logo {
+        font-family: Nunito;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 28px;
+        line-height: 50px;
+        margin: 0 0 0 15px;
+      }
+      .cs{
+        display: flex;
+        flex-direction: column-reverse;
+      }
+      #catalog {
+        align-items: center;
+        margin: 0;
+      }
+
+      .catalog {
+        font-family: Nunito;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 20px;
+        letter-spacing: 0em;
+        text-align: left;
+      }
+
+      .mark {
+        width:12px;
+        height:6px;
+        margin: 0 0 0 15px;
+      }
+
+      .form-search {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding:10px 15px;
+        height: 36px;
+        background: #FFFFFF;
+        box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        box-sizing: border-box;
+        margin:15px 0 5px;
+      }
+
+      .t {
+        font-family: Nunito;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        border: none;
+        color: #999999;
+        padding:0;
+        max-width: calc(100% - 16px);
+      }
+
+      .d {
+        width: 16px;
+        height: 16px;
+      }
+
+      header {
+        margin:auto;
+        padding:40px 25px ;
+        background: linear-gradient(0deg, rgba(221, 3, 60, 0.75), rgba(221, 3, 60, 0.75)), url('background image.png') no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
+
+      .caption {
+        margin:0;
+        font-family: Nunito;
+        font-size: 26px;
+        font-style: normal;
+        font-weight: 700;
+        letter-spacing: 0em;
+        text-align: left;
+        color:#FFFFFF
+      }
+
+      .discription {
+        margin:0;
+        font-family: Nunito;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        text-align: justify;
+        color: #FFFFFF;
+      }
+
+
+      section{
+        margin:auto;
+        padding: 30px 48px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+
+      .text p{
+        margin:0;
+        font-family: Nunito;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 26px;
+      }
+
+
+      .items{
+        margin:25px 0 15px 0;
+        gap: 25px;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+
+      }
+
+
+      .items img{
+        width:280px;
+        height:280px;
+        border-radius: 10px;
+
+      }
+
+      .name{
+        font-family: Nunito;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px;
+        letter-spacing: 0em;
+        text-align: left;
+        margin: 0 15px;
+      }
+
+
+      .cost{
+        font-family: Nunito;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 20px;
+        letter-spacing: 0em;
+        text-align: left;
+        margin: 30px 0 10px;
+
+      }
+
+
+      .b{
+        width: 110px;
+        height: 40px;
+        background: #DD033C;
+        border-radius: 10px;
+        border: none;
+        margin-top: 20px;
+        transition: all 0.3s ease
+      }
+
+      .b:hover{
+        background:#53ea93
+      }
+
+
+      .word input{
+        font-family: Nunito;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 20px;
+        letter-spacing: 0em;
+        text-align: center;
+        color:#FFFFFF
+      }
+
+      .word{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding:0 15px 20px;
+      }
+
+      .item{
+        height: 400px;
+        width: 280px;
+        box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        font-family: Nunito;
+        transition: all 0.3s ease
+      }
+
+      .item:hover{
+        -webkit-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        transform: scale(1.2);
+      }
+
+      footer{
+
+        display:flex;
+        flex-direction: column;
+
+        padding:25px;
+        background: #DD033C;
+      }
+      .pages{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 0 0 30px;
+      }
+
+      .kk{
+        display:flex;
+        flex-direction: column;
+        color: #FFFFFF;
+      }
+      .kk span{
+        font-family: Nunito;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 30px;
+        letter-spacing: 0em;
+        text-align: left;
+
+      }
+
+      .social{
+        display:flex;
+        flex-direction: row;
+        margin:auto;
+        align-items: center;
+        height: 30px;
+      }
+
+      .vk1{
+        width:30px;
+        height: 17.5px;
+
+      }
+
+      .inst{
+        position: relative;
+        margin: 0 0 0 25px;
+        width: 30px;
+        height:30px;
+      }
+
+
+      @media screen and (min-width: 768px) {
+        #menu{
+          padding: 40px;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+        }
+        .cs{
+          order:2;
+          display: flex;
+          flex-direction: row;
+        }
+        #logoblock{
+          order:1;
+          display: flex;
+          align-items: center;
+          margin:0;
+        }
+        .logoimg {
+          width: 50px;
+          height: 50px;
+        }
+        #logo{
+          font-family: Nunito;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 28px;
+          line-height: 50px;
+        }
+        #catalog{
+          order:1;
+        }
+        .form-search{
+          order:2;
+          margin-left: 50px;
+        }
+        header{
+          padding: 80px 40px;
+        }
+        .caption{
+          font-family: Nunito;
+          font-size: 40px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 40px;
+          letter-spacing: 0em;
+          text-align: left;
+        }
+        .discription{
+          font-family: Nunito;
+          font-size: 26px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 28px;
+          letter-spacing: 0em;
+          text-align: left;
+          margin-top: 50px;
+        }
+        section{
+          padding:60px 0;
+          display:flex;
+          justify-content: center;
+        }
+        .text{
+          margin-bottom: 40px;
+        }
+        .items{
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          width:630px;
+          gap: 30px 70px ;
+        }
+        footer{
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          padding: 50px 40px;
+        }
+        .pages{
+          margin:0;
+        }
+        .kk:nth-child(2){
+          margin-left: 35px;
+        }
+        .social{
+          margin:0;
+        }
+      }
+      @media screen and (min-width: 1440px){
+        #menu{
+          padding:50px 220px
+        }
+        header{
+          padding: 80px 220px;
+        }
+        .caption{
+          font-family: Nunito;
+          font-size: 50px;
+        }
+        .discription{
+          font-size:30px;
+        }
+        section{
+          padding: 80px 0;
+        }
+        .text{
+          margin-bottom: 50px;
+          width:980px;
+          font-size: 30px;
+        }
+        .items{
+          width:980px;
+        }
+        footer{
+          padding:50px 220px
+        }
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id='menu'>
+      <div id='logoblock'>
+        <img src='logo.png' alt='logo' class='logoimg'>
+        <p id='logo'>CandyShop</p>
+      </div>
+      <div class='cs'>
+        <div id='catalog'>
+          <p class='catalog'>Каталог<img src="Rectangle 2.svg" class='mark'/></p>
+        </div>
+        <form class="form-search" action="/search/" target="_blank">
+          <input type="search" name="text" required placeholder="Поиск" class='t'>
+          <input type="image" src="https://icon-icons.com/icons2/1660/PNG/32/3844467-magnifier-search-zoom_110341.png"/ class='d'>
+        </form>
+      </div>
+    </div>
+    <header>
+      <p class='caption'>Сладости из<br/> Америки, Европы и Азии</p>
+      <p class='discription'>Заходите в наш онлайн-каталог и побалуйте себя вкусняшками, которые пробовали в путешествии за границей, но которых нет в обычных сетевых супермаркетах!</p>
+    </header>
+
+    <section>
+      <div class='text'>
+        <p>Хиты продаж</p>
+      </div>
+      <div class='items'>
+        <div class='item'>
+          <img src='image 11.png' alt='товар'/>
+          <p class='name'>Кислые конфеты Toxic Waste желтые</p>
+          <div class='word'>
+            <p class='cost'>199 руб.</p>
+            <input type='button' name='text' value="Купить"/ class='b'/>
+          </div>
+        </div>
+        <div class='item'>
+          <img src='image 12.png' alt='товар'/>
+          <p class='name'>Jelly Belly Bean Boozled 5 (Бин Бузлд) 20 вкусов</p>
+          <div class='word'>
+            <p class='cost'>269 руб.</p>
+            <input type='button' value="Купить"/ class='b'/>
+          </div>
+        </div>
+        <div class='item'>
+          <img src='image 13.png' alt='товар'/>
+          <p class='name'>Pringles Mystery flavour</p>
+          <div class='word'>
+            <p class='cost'>399 руб.</p>
+            <input type='button' value="Купить"/ class='b'/>
+          </div>
+        </div>
+        <div class='item'>
+          <img src='image 14.png' alt='товар'/>
+          <p class='name'>Harry Potter Knight Bus</p>
+          <div class='word'>
+            <p class='cost'>2 119 руб.</p>
+            <input type='button' value="Купить"/ class='b'/>
+          </div>
+        </div>
+        <div class='item'>
+          <img src='image 15.png' alt='товар'/>
+          <p class='name'>Конфеты Bertie Botts Beans Jelly Belly</p>
+          <div class='word'>
+            <p class='cost'>319 руб.</p>
+            <input type='button' value="Купить"/ class='b'/>
+          </div>
+        </div>
+        <div class='item'>
+          <img src='image 16.png' alt='товар'/>
+          <p class='name'>Pocky Almond crush с миндалем</p>
+          <div class='word'>
+            <p class='cost'>159 руб.</p>
+            <input type='button' value="Купить"/ class='b'/>
+          </div>
+        </div>
+        <div class='item'>
+          <img src='image 17.png' alt='товар'/>
+          <p class='name'>Готовый завтрак Lucky Charms Fruity</p>
+          <div class='word'>
+            <p class='cost'>1 590 руб.</p>
+            <input type='button' value="Купить"/ class='b'/>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class='pages'>
+        <div class='kk'>
+          <span>Каталог</span>
+          <span>Контакты</span>
+        </div>
+        <div class='kk'>
+          <span>Доставка и оплата</span>
+          <span>Публичная оферта</span>
+        </div>
+      </div>
+      <div class='social'>
+          <img src="Vectorvk.svg" class='vk1'/>
+          <img src='instagram (1) 1.svg' class='inst'/>
+      </div>
+    </footer>
+  </body>
+</html>
